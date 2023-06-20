@@ -1,0 +1,31 @@
+sequence diagram
+  participant browser
+  participant server
+  browser-->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+  activate server
+  server-->>browser: The HTML file
+  deactivate server
+
+  browser-->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+  activate server
+  server-->>browser: The HTML file
+  deactivate server
+  Note: The HTML file is fetched from the server.
+  
+  browser-->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+  activate server
+  server-->>browser: The CSS file
+  deactivate server
+  Note: The CSS file is fetched from the server.
+
+  browser-->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+  activate server
+  server-->>browser: The Javascript file
+  deactivate server
+  Note: The browser starts executing the javascript file after fetching it from the server.
+  
+  browser-->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+  activate server
+  server-->>browser: The JSON file
+  deactivate server
+  Note: The browser fetches the data from the json file.
