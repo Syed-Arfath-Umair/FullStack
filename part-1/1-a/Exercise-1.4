@@ -1,0 +1,57 @@
+import logo from './logo.svg';
+import './App.css';
+
+const Header = (props) => {
+  return(
+    <p>
+      The Course Name Is {props.course}.
+    </p>
+  )
+}
+const Content = (props) => {
+  return(
+    <div>
+      <p>
+         The Parts Are {props.parts.map(par => par.name).join(', ')}.
+      </p>
+    </div>
+  )
+}
+const Footer = (props) => {
+  console.log(props.part)
+  return(
+    <div>
+        <p>
+           The Parts Are {props.parts.map(par => par.part).join(", ")}.
+        </p>
+    </div>
+    
+  )
+}
+const App = () =>{
+  const course = 'Full Stack (MERN Stack)';
+  const parts = [
+    {
+      name : 'part-1',
+      part : '1'
+    },
+    {
+      name : 'part-2',
+      part : '2'
+    },
+    {
+      name : 'part-3',
+      part : '3'
+    }
+  ];
+  return(
+    <div>
+      <Header course={course}/>
+      <Content parts={parts}/>
+      <Footer parts={parts}/>
+    </div>
+    );
+}
+
+
+export default App;
